@@ -10,6 +10,8 @@
         v-on:number-press="onNumberPress"
         v-on:back-press="removeLastNumber"
         v-on:clear-press="clearInput"
+        v-on:plus-press="addNumber"
+        v-on:minus-press="subtractNumber"
        ></calculator-keyboard>
     </div>
   </div>
@@ -40,6 +42,20 @@ export default {
     },
     clearInput: function() {
        this.screenText = "0";
+    },
+    addNumber: function() {
+      if(this.screenText.charAt(0) != "0"){
+        if(this.screenText.length <= 7 && this.screenText.length >= 1){
+            this.screenText = this.screenText + "+";
+        }
+      }
+    },
+    subtractNumber: function (){
+      if(this.screenText.charAt(0) != "0"){
+        if(this.screenText.length <= 7 && this.screenText.length >= 1){
+            this.screenText = this.screenText + "-";
+        }
+      }
     }
   },
   components: {
