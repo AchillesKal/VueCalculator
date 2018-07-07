@@ -3,16 +3,21 @@
     <div class="calculator-screen">
       <calculator-screen></calculator-screen>
     </div>
+    <div class="calculator-keyboard">
+       <calculator-keyboard></calculator-keyboard>
+    </div>
   </div>
 </template>
 
 <script>
 import CalculatorScreen from '@/components/CalculatorScreen.vue';
+import CalculatorKeyboard from '@/components/CalculatorKeyboard.vue';
 
 export default {
   name: 'Calculator',
   components: {
-    CalculatorScreen
+    CalculatorScreen,
+    CalculatorKeyboard
   }
 }
 </script>
