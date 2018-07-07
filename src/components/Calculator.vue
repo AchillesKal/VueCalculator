@@ -12,6 +12,8 @@
         v-on:clear-press="clearInput"
         v-on:plus-press="addNumber"
         v-on:minus-press="subtractNumber"
+        v-on:devide-press="devideNumber"
+        v-on:multiply-press="multiplyNumber"
        ></calculator-keyboard>
     </div>
   </div>
@@ -46,14 +48,28 @@ export default {
     addNumber: function() {
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
-            this.screenText = this.screenText + "+";
+          this.screenText = this.screenText + "+";
         }
       }
     },
     subtractNumber: function (){
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
-            this.screenText = this.screenText + "-";
+          this.screenText = this.screenText + "-";
+        }
+      }
+    },
+    multiplyNumber: function (){
+      if(this.screenText.charAt(0) != "0"){
+        if(this.screenText.length <= 7 && this.screenText.length >= 1){
+          this.screenText = this.screenText + "*";
+        }
+      }
+    },
+    devideNumber: function (){
+      if(this.screenText.charAt(0) != "0"){
+        if(this.screenText.length <= 7 && this.screenText.length >= 1){
+          this.screenText = this.screenText + "/";
         }
       }
     }
