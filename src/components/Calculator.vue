@@ -6,7 +6,10 @@
       ></calculator-screen>
     </div>
     <div class="calculator-keyboard">
-       <calculator-keyboard  v-on:number-press="onNumberPress"></calculator-keyboard>
+       <calculator-keyboard
+        v-on:number-press="onNumberPress"
+        v-on:back-press="removeLastNumber"
+       ></calculator-keyboard>
     </div>
   </div>
 </template>
@@ -19,12 +22,20 @@ export default {
   name: 'Calculator',
   data: function () {
     return {
-      screenText: 0
+      screenText: "0"
     }
   },
   methods: {
     onNumberPress: function(number) {
-      alert(number);
+      if(this.screenText.length <= 9){
+        if(this.screenText.charAt(0) == "0"){
+          this.screenText = this.screenText.substr(1);
+        }
+        this.screenText += number;
+      }
+    },
+    removeLastNumber: function(){
+      this.screenText =  this.screenText.slice(0, -1);
     }
   },
   components: {
