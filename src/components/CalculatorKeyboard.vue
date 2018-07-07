@@ -17,7 +17,7 @@
     <button v-on:click="numberPress(1)">1</button>
     <button>+</button>
     <button>^</button>
-    <button v-on:click="numberPress(0)">0</button>
+    <button v-on:click="$emit('number-press', 0)">0</button>
     <button>,</button>
     <button>=</button>
   </div>
@@ -27,9 +27,6 @@
 export default {
   name: 'CalculatorKeyboard',
   methods: {
-    numberPress: function(number) {
-      alert(number)
-    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="screen">
-    {{screenText}}
+    {{ screenText }}
   </div>
 </template>
 

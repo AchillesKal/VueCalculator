@@ -1,10 +1,12 @@
 <template>
   <div class="calculator">
     <div class="calculator-screen">
-      <calculator-screen v-bind:screenText="screenText"></calculator-screen>
+      <calculator-screen
+        v-bind:screenText="screenText"
+      ></calculator-screen>
     </div>
     <div class="calculator-keyboard">
-       <calculator-keyboard></calculator-keyboard>
+       <calculator-keyboard  v-on:number-press="onNumberPress"></calculator-keyboard>
     </div>
   </div>
 </template>
@@ -18,6 +20,11 @@ export default {
   data: function () {
     return {
       screenText: 0
+    }
+  },
+  methods: {
+    onNumberPress: function(number) {
+      alert(number);
     }
   },
   components: {
