@@ -15,6 +15,11 @@ import CalculatorKeyboard from '@/components/CalculatorKeyboard.vue';
 
 export default {
   name: 'Calculator',
+  data: function () {
+    return {
+      screenText: 0
+    }
+  },
   components: {
     CalculatorScreen,
     CalculatorKeyboard
