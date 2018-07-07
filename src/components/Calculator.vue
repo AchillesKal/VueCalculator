@@ -9,6 +9,7 @@
        <calculator-keyboard
         v-on:number-press="onNumberPress"
         v-on:back-press="removeLastNumber"
+        v-on:clear-press="clearInput"
        ></calculator-keyboard>
     </div>
   </div>
@@ -36,6 +37,9 @@ export default {
     },
     removeLastNumber: function(){
       this.screenText =  this.screenText.slice(0, -1);
+    },
+    clearInput: function() {
+       this.screenText = "0";
     }
   },
   components: {
