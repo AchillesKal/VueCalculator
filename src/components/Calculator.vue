@@ -1,7 +1,7 @@
 <template>
   <div class="calculator">
     <div class="calculator-screen">
-      <calculator-screen></calculator-screen>
+      <calculator-screen v-bind:screenText="screenText"></calculator-screen>
     </div>
     <div class="calculator-keyboard">
        <calculator-keyboard></calculator-keyboard>
