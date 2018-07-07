@@ -1,5 +1,9 @@
 <template>
   <div class="keyboard">
+    <button>CE</button>
+    <button>C</button>
+    <button><</button>
+    <button>%</button>
     <button>7</button>
     <button>8</button>
     <button>9</button>
@@ -12,6 +16,10 @@
     <button>2</button>
     <button>1</button>
     <button>+</button>
+    <button>^</button>
+    <button>0</button>
+    <button>,</button>
+    <button>=</button>
   </div>
 </template>
 
@@ -23,6 +31,7 @@ export default {
 
 <style scoped>
 .keyboard{
+  padding-top: 10px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 }
@@ -31,5 +40,6 @@ export default {
   height: 40px;
   border: 0;
   background-color: #FFF;
+  margin: 3px;
 }
 </style>
