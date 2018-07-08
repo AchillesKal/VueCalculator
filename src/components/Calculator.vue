@@ -15,6 +15,7 @@
         v-on:devide-press="devideNumber"
         v-on:multiply-press="multiplyNumber"
         v-on:comma-press="commaNumber"
+        v-on:equal-press="getResults"
        ></calculator-keyboard>
     </div>
   </div>
@@ -80,6 +81,10 @@ export default {
           this.screenText = this.screenText + ".";
         }
       }
+    },
+    getResults: function(){
+      let screenText =  this.screenText;
+      let result = screenText.split("+");
     }
   },
   components: {
