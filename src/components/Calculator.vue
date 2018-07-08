@@ -14,6 +14,7 @@
         v-on:minus-press="subtractNumber"
         v-on:devide-press="devideNumber"
         v-on:multiply-press="multiplyNumber"
+        v-on:comma-press="commaNumber"
        ></calculator-keyboard>
     </div>
   </div>
@@ -70,6 +71,13 @@ export default {
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
           this.screenText = this.screenText + "/";
+        }
+      }
+    },
+    commaNumber: function(){
+      if(this.screenText.charAt(0) != "0"){
+        if(this.screenText.length <= 7 && this.screenText.length >= 1){
+          this.screenText = this.screenText + ".";
         }
       }
     }
