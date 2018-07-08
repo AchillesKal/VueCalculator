@@ -84,7 +84,13 @@ export default {
     },
     getResults: function(){
       let screenText =  this.screenText;
-      let result = screenText.split("+");
+      let text = screenText.split("+");
+
+      let parameter1 = Number(text[0]);
+      let parameter2 = Number(text[1]);
+      let result = parameter1 + parameter2;
+
+      this.screenText = result.toString();
     }
   },
   components: {
