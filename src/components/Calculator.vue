@@ -48,6 +48,10 @@ export default {
        this.screenText = "0";
     },
     addNumber: function() {
+      if (this.screenText.indexOf('+') > -1) {
+        this.getResults();
+      }
+
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
           this.screenText = this.screenText + "+";
