@@ -87,6 +87,9 @@ export default {
       }
     },
     getResults: function(delimiter = false){
+      if(!delimiter){
+        delimiter = "+";
+      }
       let screenText =  this.screenText;
       let text = screenText.split(delimiter);
       let result = 0;
