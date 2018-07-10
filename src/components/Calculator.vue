@@ -86,9 +86,9 @@ export default {
         }
       }
     },
-    getResults: function(){
+    getResults: function(delimiter = 0){
       let screenText =  this.screenText;
-      let text = screenText.split("+");
+      let text = screenText.split(delimiter);
       let result = 0;
 
       text.forEach(function(element) {
