@@ -85,10 +85,11 @@ export default {
     getResults: function(){
       let screenText =  this.screenText;
       let text = screenText.split("+");
+      let result = 0;
 
-      let parameter1 = Number(text[0]);
-      let parameter2 = Number(text[1]);
-      let result = parameter1 + parameter2;
+      text.forEach(function(element) {
+        result = result + Number(element);
+      });
 
       this.screenText = result.toString();
     }
