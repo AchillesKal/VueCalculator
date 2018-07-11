@@ -49,7 +49,7 @@ export default {
     },
     addNumber: function() {
       if (this.screenText.indexOf('+') > -1) {
-        this.getResults();
+        this.getResults("+");
       }
 
       if(this.screenText.charAt(0) != "0"){
@@ -59,6 +59,10 @@ export default {
       }
     },
     subtractNumber: function (){
+      if (this.screenText.indexOf('-') > -1) {
+        this.getResults("-");
+      }
+
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
           this.screenText = this.screenText + "-";
@@ -66,6 +70,10 @@ export default {
       }
     },
     multiplyNumber: function (){
+      if (this.screenText.indexOf('*') > -1) {
+        this.getResults("*");
+      }
+
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
           this.screenText = this.screenText + "*";
@@ -73,6 +81,10 @@ export default {
       }
     },
     devideNumber: function (){
+      if (this.screenText.indexOf('/') > -1) {
+        this.getResults("/");
+      }
+
       if(this.screenText.charAt(0) != "0"){
         if(this.screenText.length <= 7 && this.screenText.length >= 1){
           this.screenText = this.screenText + "/";
@@ -94,9 +106,26 @@ export default {
       let text = screenText.split(delimiter);
       let result = 0;
 
-      text.forEach(function(element) {
-        result = result + Number(element);
-      });
+      console.log(text[0]);
+      console.log(text[1]);
+      console.log(delimiter);
+
+      switch (delimiter) {
+        case "+":
+          result = Number(text[0]) + Number(text[1]);
+          break;
+        case "-":
+          result = Number(text[0]) - Number(text[1]);
+          break;
+        case "/":
+          result = Number(text[0]) / Number(text[1]);
+          break;
+         case "*":
+          result = Number(text[0]) * Number(text[1]);
+          break;
+        default:
+          console.log('default')
+      }
 
       this.screenText = result.toString();
     }
