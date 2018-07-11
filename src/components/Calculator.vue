@@ -118,8 +118,6 @@ export default {
       if(!delimiter){
         delimiter = this.getOperations(this.screenText);
       }
-
-      console.log(delimiter)
       let screenText =  this.screenText;
       let text = screenText.split(delimiter);
       let result = 0;
