@@ -98,17 +98,31 @@ export default {
         }
       }
     },
+    getOperations: function(string){
+      let addOperator = string.indexOf("+");
+      let subOperator = string.indexOf("-");
+      let divOperator = string.indexOf("/");
+      let multiOperator = string.indexOf("*");
+
+      if(addOperator > 0){
+        return "+";
+      } else if(subOperator > 0) {
+        return "-";
+      } else if(divOperator > 0) {
+        return "/";
+      } else if(multiOperator > 0) {
+        return "*";
+      }
+    },
     getResults: function(delimiter = false){
       if(!delimiter){
-        delimiter = "+";
+        delimiter = this.getOperations(this.screenText);
       }
+
+      console.log(delimiter)
       let screenText =  this.screenText;
       let text = screenText.split(delimiter);
       let result = 0;
-
-      console.log(text[0]);
-      console.log(text[1]);
-      console.log(delimiter);
 
       switch (delimiter) {
         case "+":
@@ -123,8 +137,6 @@ export default {
          case "*":
           result = Number(text[0]) * Number(text[1]);
           break;
-        default:
-          console.log('default')
       }
 
       this.screenText = result.toString();
