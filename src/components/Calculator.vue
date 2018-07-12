@@ -154,7 +154,7 @@ export default {
   display: inline-block;
   background-color: #ebebeb;
   box-shadow: 0 0 10px 1px #5f5f5f7a;
-  min-height: 450px;
+  min-height: 300px;
   padding: 5px;
   box-sizing: border-box;
 }
